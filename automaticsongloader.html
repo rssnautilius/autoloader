@@ -1,0 +1,21 @@
+<html><head>
+<link rel="stylesheet" href="./style.css">
+<script src="./jquery-3.6.0.min.js"></script>
+
+<script>
+    var url="http://....//link to txt file beeing liveupdated by prentzel";
+function updateDiv(url) {
+    $( "#here" ).load("file.txt");  // function to reload the source of the dif can be easely modified to handle the json file aswell u simply parsejson before this line and 
+    //load the json output as new innerhtml might probably even better 
+    $("#here").hide().show();// this might be neded to update the div in real time also toggle().toggle() might work aswell 
+ }
+var intervalId = window.setInterval(function(){
+  updateDiv(url) ; //i update the div here each 5 seconds 
+}, 5000);
+   
+</script>
+</head>
+<div id="here" name="here" >
+    Loading song name....
+</div>
+</html>
